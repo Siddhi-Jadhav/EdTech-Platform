@@ -8,11 +8,12 @@ EduLearn is a clean, modern, and user-friendly educational website front-end mad
 - Feature highlights with icons
 - Fully responsive layout for all screen sizes
 - Modular and readable code
-  
-##📈 Ideal Use Case
-Online learning platforms
-LMS front-end design mockups
-Personal learning projects or portfolios
+
+## 📈 Ideal Use Case
+- Online learning platforms
+- LMS front-end design mockups
+- Personal learning projects or portfolios
+
 
 ## ✨ Future Improvements
 
