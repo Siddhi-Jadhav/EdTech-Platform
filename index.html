@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLearn - Online Learning Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-left {
+      flex: 1;
+    }
+
+    .navbar-center {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #3b82f6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .login-btn {
+      background-color: #3b82f6;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      background: linear-gradient(to right, #eef2ff, #fef9ff);
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #4b5563;
+    }
+
+    .cta-buttons button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .primary-btn {
+      background-color: #3b82f6;
+      color: #fff;
+    }
+
+    .secondary-btn {
+      background-color: #e0e7ff;
+      color: #1e3a8a;
+    }
+
+    .hero-image img {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .features {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #1f2937;
+    }
+
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .feature-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .feature-box img {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+
+    .feature-box h3 {
+      font-size: 20px;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .feature-box p {
+      font-size: 16px;
+      color: #6b7280;
+    }
+
+    footer {
+      background-color: #1e3a8a;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color:#3b82f6;
+    }
+
+    .footer-logo .logo-icon {
+      font-size: 26px;
+    }
+
+    .footer-logo .highlight {
+      color: #3b82f6;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #dbeafe;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-social a {
+      margin: 0 8px;
+      display: inline-block;
+    }
+
+    .footer-social img {
+      width: 24px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .footer-social img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo">EduLearn</div>
+    </div>
+    <div class="navbar-center">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <button class="login-btn">Login</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Upgrade Your Learning Experience</h1>
+      <p>Explore top-rated courses from leading educators and start your journey today.</p>
+      <div class="cta-buttons">
+        <button class="primary-btn">Get Started</button>
+        <button class="secondary-btn">Browse Courses</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="studentimage.webp" alt="Hero Illustration" />
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Why Choose EduLearn?</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Expert Teachers" />
+        <h3>Expert Teachers</h3>
+        <p>Learn from the best in the industry with years of teaching experience.</p>
+      </div>
+      <div class="feature-box">
+        <img src="clock.png" alt="Flexible Schedule" />
+        <h3>Flexible Schedule</h3>
+        <p>Access lessons anytime, anywhere, and learn at your own pace.</p>
+      </div>
+      <div class="feature-box">
+        <img src="certificate.png" alt="Certification" />
+        <h3>Certification</h3>
+        <p>Get certified after completing courses to showcase your skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <span class="logo-icon"></span> Edu<span class="highlight">Learn</span>
+      </div>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-social">
+        <!-- <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a> -->
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" /></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+      </div>
+      <p>&copy; 2025 EduLearn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.login-btn').addEventListener('click', () => {
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

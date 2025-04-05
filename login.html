@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | EduLearn</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f7f9fd, #c7d2fe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 420px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #4f46e5;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      font-size: 15px;
+      transition: border 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #4f46e5;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 18px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: #4f46e5;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: #dc2626;
+      font-size: 13px;
+      margin: -10px 0 12px;
+      display: none;
+    }
+
+    .forgot {
+      text-align: right;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .forgot a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 13px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #4338ca;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .register-link a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 15px;
+      display: none;
+      font-weight: 500;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login to EduLearn</h2>
+    <form id="loginForm" novalidate>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <div class="error" id="emailError">Please enter a valid email.</div>
+
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Enter your password" />
+        <!-- <button type="button" class="toggle-password" onclick="togglePassword()">Show</button> -->
+      </div>
+      <div class="error" id="passwordError">Password must be at least 6 characters.</div>
+
+      <div class="forgot">
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <div class="success" id="successMsg">Login successful!</div>
+
+    <div class="register-link">
+      Don't have an account? <a href="Registration.html">Register here</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const pwd = document.getElementById("password");
+      const btn = document.querySelector(".toggle-password");
+      // if (pwd.type === "password") {
+      //   pwd.type = "text";
+      //   btn.textContent = "Hide";
+      // } else {
+      //   pwd.type = "password";
+      //   // btn.textContent = "Show";
+      // }
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+      const successMsg = document.getElementById("successMsg");
+
+      let valid = true;
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim() || !emailPattern.test(email.value)) {
+        emailError.style.display = "block";
+        valid = false;
+      } else {
+        emailError.style.display = "none";
+      }
+
+      if (!password.value.trim() || password.value.length < 6) {
+        passwordError.style.display = "block";
+        valid = false;
+      } else {
+        passwordError.style.display = "none";
+      }
+
+      if (valid) {
+        successMsg.style.display = "block";
+        setTimeout(() => {
+          successMsg.textContent = "Redirecting...";
+          window.location.href = "dashboard.html"; // 🔗 Redirects to dashboard.html
+        }, 1500);
+      } else {
+        successMsg.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
