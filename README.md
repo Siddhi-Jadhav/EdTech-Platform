@@ -1,5 +1,6 @@
-##🎯 Project Overview: EduLearn – EdTech Website
-EduLearn is a clean, modern, and user-friendly educational website front-end made to promote online learning. It aims to give users—students, educators, and institutions—a seamless and engaging experience for discovering and accessing learning resources.
+## 🎯 Project Overview: EduLearn – EdTech Website
+- EduLearn is a clean, modern, and user-friendly educational website front-end made to promote online learning.
+- It aims to give users—students, educators, and institutions—a seamless and engaging experience for discovering and accessing learning resources.
 
 ## 🚀 Features
 - Responsive navigation bar with sticky positioning
